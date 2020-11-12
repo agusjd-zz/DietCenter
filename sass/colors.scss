@@ -1,0 +1,23 @@
+//Variables
+$titles: #0ACF83;
+$button-color: #067B5F;
+
+.indexTitle{
+    color: $titles;
+}
+.buttonBuy{
+    background-color: $button-color !important;
+
+}
+.textButton{
+    color: white;
+}
+
+.menu{
+    background-color: $button-color;
+}
+.buttonCat{
+    background-color: $button-color !important;
+    color: white !important;
+}
+
