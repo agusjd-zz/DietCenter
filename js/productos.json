@@ -1,5 +1,4 @@
-{
-	"productos": [{
+	{"productos" : [{
 		"producto": "Barra energetica",
 		"precio": 90,
 		"id": 1
@@ -20,4 +19,4 @@
 		"precio": 230,
 		"id": 5
 	}]
-}
+	}

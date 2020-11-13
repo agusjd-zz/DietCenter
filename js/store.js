@@ -6,6 +6,8 @@ const containerIndex = document.getElementById("containerIndex");
 const sectionSnack = document.getElementById("sectionSnack");
 const snackButton = document.getElementById("snackButton");
 const catButton = document.getElementById("catButton");
+let addcart = document.querySelectorAll(".agregarImg");
+
 container.removeChild(containerStore);
 container.removeChild(sectionSnack);
 function openStore(){
