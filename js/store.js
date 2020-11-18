@@ -1,29 +1,38 @@
-const buyButton = document.querySelector(".buttonBuy");
-const storeButton = document.querySelector(".storeButton");
-const container = document.getElementById("container");
-const containerStore = document.getElementById("containerStore");
-const containerIndex = document.getElementById("containerIndex");
-const sectionSnack = document.getElementById("sectionSnack");
-const snackButton = document.getElementById("snackButton");
-const catButton = document.getElementById("catButton");
-let addcart = document.querySelectorAll(".agregarImg");
+const storeButton = $(".storeButton");
+const container = $("#container");
+const containerStore = $("#containerStore");
+const containerIndex = $("#containerIndex");
+const sectionSnack = $("#sectionSnack");
+const snackButton = $("#snackButton");
+const catButton = $("#catButton");
+let addcart = $(".agregarImg");
 
-container.removeChild(containerStore);
-container.removeChild(sectionSnack);
-function openStore(){
-    container.removeChild(containerIndex);
-    container.appendChild(containerStore);
-}
-function openSnackSection(){
-    container.removeChild(containerStore);
-    container.appendChild(sectionSnack);
-}
-function catBoton(){
-    container.removeChild(sectionSnack);
-    container.appendChild(containerStore);
-}
-buyButton.addEventListener("click",openStore,true);
-storeButton.addEventListener("click",openStore,true);
-snackButton.addEventListener("click",openSnackSection,true);
-catButton.addEventListener("click",catBoton,true);
+$(containerStore).hide();
+$(sectionSnack).hide();
 
+$(storeButton).click(function(){
+    $(containerStore).show();
+    $(containerIndex).hide();
+    if ($(sectionSnack).is(':visible')) {
+      $(sectionSnack).hide();     
+    }
+  });
+
+$(snackButton).click(function(){
+  $(containerStore).hide();
+  $(sectionSnack).show();
+  
+
+})
+
+$(catButton).click(function(){
+  $(containerStore).show();
+  $(catButton).removeClass("buttonCat");
+  $(catButton).addClass("btn-success");
+  if ($(sectionSnack).is(":visible")){
+    $(sectionSnack).hide();
+  }
+   
+  }
+  
+)

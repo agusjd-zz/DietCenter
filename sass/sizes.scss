@@ -28,12 +28,20 @@
     height: 74px;
 }
 
-.ironBar{
-    width: 20vh;
-}
-.products{
-    border: solid 3px black;
+.itemImage{
+    width: 15vh;
+}       
+.item{
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 .agregarImg{
     width: 3vh;
+    border: none;
+}
+
+body{
+    background-color: #fafafa !important;
 }
