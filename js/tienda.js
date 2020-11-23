@@ -46,8 +46,8 @@ function addItemToCart(itemTitle,itemPrice,itemImage){
     shopRow.innerHTML = shopCartContent;
     shopCartContainer.append(shopRow);
 
+    shopRow.querySelector(".buttonDelete").addEventListener("click", removeShopCartItem);
     shopCartTotal()
-   
 }
 
 /*Funcion que actualiza total del carrito*/
@@ -64,9 +64,18 @@ function shopCartTotal(){
         const shopCartItemCant = Number(shopCartItemCantElement.value);
         
         total = total + shopCartItemPrice * shopCartItemCant;
-        console.log(total);
     });
     shopCartTotal.innerHTML = `AR$${total}`;
 }
 
-/* 
+/*Funcion removedora de elementos del carrito */
+
+function removeShopCartItem(event){
+
+    const buttonClick = event.target;
+
+    buttonClick.closest(".shoppingCartItem").remove();
+
+    shopCartTotal();
+
+}
