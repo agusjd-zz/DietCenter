@@ -19,6 +19,18 @@ function addToCartClick(event){
     addItemToCart(itemTitle,itemPrice,itemImage);
 }
 function addItemToCart(itemTitle,itemPrice,itemImage){
+    const productTitle = shopCartContainer.getElementsByClassName("shoppingCartItemTitle");
+    
+    for (let i = 0; i < productTitle.length; i++) {
+        if (productTitle[i].innerText === itemTitle) {
+          let itemCant = productTitle[i].parentElement.parentElement.parentElement.querySelector(".shoppingCartItemCant");
+          itemCant.value++;
+          shopCartTotal();
+          return
+        }
+        
+    }
+    
     const shopRow = document.createElement("div");
     const shopCartContent = `
     <div class="row shoppingCartItem">
@@ -47,6 +59,8 @@ function addItemToCart(itemTitle,itemPrice,itemImage){
     shopCartContainer.append(shopRow);
 
     shopRow.querySelector(".buttonDelete").addEventListener("click", removeShopCartItem);
+    shopRow.querySelector(".shoppingCartItemCant").addEventListener("change", cantChange);
+    
     shopCartTotal()
 }
 
@@ -78,4 +92,12 @@ function removeShopCartItem(event){
 
     shopCartTotal();
 
+}
+/*Funcion que actualiza la cantidad de los productos*/
+function cantChange(event){
+    const cant = event.target;
+    if (cant.value <= 0) {
+        cant.value = 1;    
+    }
+    shopCartTotal()
 }
