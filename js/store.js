@@ -24,15 +24,3 @@ $(snackButton).click(function(){
   
 
 })
-
-$(catButton).click(function(){
-  $(containerStore).show();
-  $(catButton).removeClass("buttonCat");
-  $(catButton).addClass("btn-success");
-  if ($(sectionSnack).is(":visible")){
-    $(sectionSnack).hide();
-  }
-   
-  }
-  
-)
