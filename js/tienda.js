@@ -8,6 +8,10 @@ cartButtons.forEach((addToCart) => {
     
 });
 
+const buyButton = document.querySelector(".buyButton");
+
+buyButton.addEventListener("click", buyButtonClick);
+
 function addToCartClick(event){
     const but = event.target;
     const item = but.closest(".item");
@@ -99,5 +103,12 @@ function cantChange(event){
     if (cant.value <= 0) {
         cant.value = 1;    
     }
+    shopCartTotal()
+}
+
+/* Boton comprar */
+
+function buyButtonClick(){
+    shopCartContainer.innerHTML = " ";
     shopCartTotal()
 }
