@@ -1,8 +1,9 @@
 /* Agregar Elementos al Carrito */
 
 const cartButtons = document.querySelectorAll('.agregarImg');
-const shopCartContainer = document.querySelector(".shopCartContainer")  
-
+const shopCartContainer = document.querySelector(".shopCartContainer");
+let contador = document.getElementById("contador");
+totalcontador = Number(contador.innerHTML);
 cartButtons.forEach((addToCart) => {
     addToCart.addEventListener('click', addToCartClick);
     
@@ -58,12 +59,14 @@ function addItemToCart(itemTitle,itemPrice,itemImage){
         </div>
     </div>
 </div>`;
-
+   
+    
     shopRow.innerHTML = shopCartContent;
     shopCartContainer.append(shopRow);
 
     shopRow.querySelector(".buttonDelete").addEventListener("click", removeShopCartItem);
     shopRow.querySelector(".shoppingCartItemCant").addEventListener("change", cantChange);
+    
     
     shopCartTotal()
 }
@@ -81,9 +84,17 @@ function shopCartTotal(){
         const shopCartItemCantElement = shoppingCartItem.querySelector(".shoppingCartItemCant");
         const shopCartItemCant = Number(shopCartItemCantElement.value);
         
+        totalcontador2 = totalcontador * shopCartItemCant
+        totalcontador = shopCartItems.length;
+
         total = total + shopCartItemPrice * shopCartItemCant;
+    
+        
     });
+    contador.innerHTML = totalcontador2;
+    
     shopCartTotal.innerHTML = `AR$${total}`;
+    
 }
 
 /*Funcion removedora de elementos del carrito */

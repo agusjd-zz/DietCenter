@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body id="container">
-    <header>
+<header>
         <nav class="navbar navbar-expand-md navbar-dark menu">
             <!-- Brand -->
             <a class="navbar-brand" href="#">DIETETICA</a>
@@ -34,11 +34,11 @@
             </div>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
               <img src="images/carrito.png" alt="" srcset="" class="agregarImg">
-              <span class="badge badge-success">0</span>
+              <span id="contador"  class="badge badge-success">0</span>
 
             </button>
           </nav>  
-    </header>
+</header>
 <div id="containerIndex">
     <main class="bodyIndex container-fluid">
         <div class="container boxMain text-center">
@@ -50,15 +50,20 @@
         </div> 
     </main>
 </div>
-<div id="containerStore" class="container container-sm-12">
+<div id="searchMenu" class="container container-sm-12">
   <div class="form-group pt-3">
     <input type="text" class="form-control form-control-lg" placeholder="¿Que producto buscas?" >
   </div>
   <div>
-    <button type="button" class="btn buttonCat">Categorias</button>
-    <button type="button" class="btn buttonCat">Todos los productos</button>
+    <button type="button" class="btn buttonCat btn-success" id="buttonCat">Categorias </button>
+    <button type="button" class="btn buttonCat" id="buttonAll">Todos los productos</button>
     <button type="button" class="btn buttonCat">Sin Gluten</button>
+    <button type="button" class="btn buttonCat">Snacks</button>
+    <button type="button" class="btn buttonCat">Bebidas</button>
+    <button type="button" class="btn buttonCat">Almacen</button>
   </div>
+</div>
+<div id="catStore" class="container container-sm-12">
   <div class="jumbotron mt-5 d-flex btn" id="drinkButton">
     <img src="images/drinks.png" alt="" class="imgCat1">
     <p class="textCat">Bebidas</p>
@@ -77,19 +82,7 @@
   </div>
 </div>
 
-<div id="sectionSnack" class="container">
-  <div id="menuSection" class="container">
-    <div class="form-group pt-3">
-      <input type="text" class="form-control form-control-lg" placeholder="¿Que producto buscas?" >
-    </div>
-    <div>
-      <button type="button" class="btn buttonCat">Todos los productos</button>
-      <button type="button" class="btn buttonCat">Sin Gluten</button>
-      <button type="button" class="btn buttonCat">Snacks</button>
-      <button type="button" class="btn buttonCat">Bebidas</button>
-      <button type="button" class="btn buttonCat">Almacen</button>
-    </div>
-  </div>   
+<div id="allItems" class="container"> 
   <div class="row pt-4 mb-4 text-center">
     <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
       <img src="images/ironbar.jpg" alt="" class="itemImage rounded">
@@ -146,7 +139,7 @@
       <p class="itemPrice">AR$200 <a><img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
     </div>
     <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
-      <img src="images/vori.jpg" alt="" class="itemImage rounded">
+      <img src="images/mermelada.png" alt="" class="itemImage rounded">
       <h2 class="itemTitle">Mermelada BeePure</h2>
       <p class="itemPrice">AR$400 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
     </div>
@@ -155,7 +148,8 @@
       <h2 class="itemTitle">Miel Finca Carolina</h2>
       <p class="itemPrice">AR$180 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
     </div>
-  </div>  
+    
+  </div>
 </div>
 <div class="container">
   <!-- The Modal -->
@@ -198,7 +192,7 @@
               <div class="d-flex align-items-center">
                   <p class="mb-0">Total</p>
                   <p class="ml-4 mb-0 shopCartTotal">AR$0</p>
-                  <button class="btn btn-success ml-auto buyButton" type="button">Comprar</button>
+                  <button class="btn btn-success ml-auto buyButton" type="button" id="finish" >Comprar</button>
               </div>
           </div>
       </div>

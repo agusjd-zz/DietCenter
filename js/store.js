@@ -1,26 +1,41 @@
-const storeButton = $(".storeButton");
-const container = $("#container");
-const containerStore = $("#containerStore");
-const containerIndex = $("#containerIndex");
-const sectionSnack = $("#sectionSnack");
-const snackButton = $("#snackButton");
-const catButton = $("#catButton");
-let addcart = $(".agregarImg");
+const storeButton = $('.storeButton'); /*Boton comprar del inicio y boton tienda del navbar*/
+const containerIndex = $('#containerIndex') /*Pantalla Inicio*/
+const searchMenu = $('#searchMenu')/* Menu buscar y categorias*/
+const catStore = $('#catStore') /*Menu Categorias*/
+const allItems = $('#allItems')/*Todos los productos*/
+const buttonAll = $('#buttonAll')/*Boton todas los productos*/
+const buttonCat = $('#buttonCat');
 
-$(containerStore).hide();
-$(sectionSnack).hide();
 
+$(searchMenu).hide();
+$(catStore).hide();
+$(allItems).hide()
+
+/*Funcion que muestra la tienda*/
 $(storeButton).click(function(){
-    $(containerStore).show();
-    $(containerIndex).hide();
-    if ($(sectionSnack).is(':visible')) {
-      $(sectionSnack).hide();     
-    }
-  });
+  $(containerIndex).hide()
+  $(searchMenu).show();
+  $(catStore).show();
+  if ($(buttonCat)){
+    $(buttonCat).addClass("btn-success");
+  }
 
-$(snackButton).click(function(){
-  $(containerStore).hide();
-  $(sectionSnack).show();
-  
+})
+/*Boton todos los productos*/
+$(buttonAll).click(function(){
+  $(catStore).hide();
+  $(allItems).show();
+  $(buttonCat).removeClass("btn-success");
+  $(buttonAll).addClass("btn-success");
+})
 
+/*Boton categorias*/
+$(buttonCat).click(function(){
+  $(catStore).show();
+  $(buttonAll).removeClass("btn-success");
+  $(buttonCat).addClass("btn-success");
+  if (($(allItems))) {
+    $(allItems).hide();
+    
+  }
 })
