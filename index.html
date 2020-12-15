@@ -58,10 +58,17 @@
     <button type="button" class="btn buttonCat btn-success" id="buttonCat">Categorias </button>
     <button type="button" class="btn buttonCat" id="buttonAll">Todos los productos</button>
     <button type="button" class="btn buttonCat">Sin Gluten</button>
-    <button type="button" class="btn buttonCat">Snacks</button>
+    <button type="button" class="btn buttonCat snackButton">Snacks</button>
     <button type="button" class="btn buttonCat">Bebidas</button>
-    <button type="button" class="btn buttonCat">Almacen</button>
+    <button type="button" class="btn buttonCat" id="almaButton">Almacen</button>
   </div>
+  <div class="toast m-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+  data-delay="2000">
+  <div class="toast-header">
+      <span>✅</span>
+      <strong class="mr-auto ml-1 text-secondary">Se agrego elemento al carrito</strong>
+  </div>
+</div>
 </div>
 <div id="catStore" class="container container-sm-12">
   <div class="jumbotron mt-5 d-flex btn" id="drinkButton">
@@ -69,7 +76,7 @@
     <p class="textCat">Bebidas</p>
 
   </div>
-  <div class="jumbotron d-flex btn" id="snackButton">
+  <div class="jumbotron d-flex btn snackButton">
     <img src="images/snacks.png" alt="" class="imgCat2">
     <p class="textCat">Snacks</p> 
   </div>
@@ -81,7 +88,7 @@
     <p class="textCat">Te Infusiones</p>
   </div>
 </div>
-
+<!-- Inicio Seccion todos los productos -->
 <div id="allItems" class="container"> 
   <div class="row pt-4 mb-4 text-center">
     <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
@@ -151,6 +158,51 @@
     
   </div>
 </div>
+<!-- Fin Seccion todos los productos -->
+<!-- Inicio seccion Almacen -->
+<div id="almaItems" class="container"> 
+  <div class="row pt-5 mb-4 text-center">  
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
+      <img src="images/cacao.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Cacao en polvo</h2>
+      <p class="itemPrice">AR$240 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
+      <img src="images/barra.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Cacao 70%</h2>
+      <p class="itemPrice">AR$281 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
+      <img src="images/coco.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Aceite de coco</h2>
+      <p class="itemPrice">AR$800 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
+      <img src="images/lefit.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Le Fit</h2>
+      <p class="itemPrice">AR$220 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>
+
+  </div>
+  <div class="row pt-4 text-center">
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item ">
+      <img src="images/ghee.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Ghee</h2>
+      <p class="itemPrice">AR$ 400 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
+      <img src="images/mermelada.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Mermelada BeePure</h2>
+      <p class="itemPrice">AR$400 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>
+    <div class="col-5 col-sm-5 col-md-5 col-lg-2 col-xl-2 item">
+      <img src="images/miel.png" alt="" class="itemImage rounded">
+      <h2 class="itemTitle">Miel Finca Carolina</h2>
+      <p class="itemPrice">AR$180 <a> <img src="images/carrito.png" alt="" srcset="" class="agregarImg"></a></p>
+    </div>  
+  </div>
+</div>
+<!-- Fin seccion Almacen -->
 <div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
@@ -203,6 +255,8 @@
   
 </div>
   <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="js/store.js"></script>
   <script src="js/tienda.js"></script>
 </body>

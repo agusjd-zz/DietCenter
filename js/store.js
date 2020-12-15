@@ -2,15 +2,18 @@ const storeButton = $('.storeButton'); /*Boton comprar del inicio y boton tienda
 const containerIndex = $('#containerIndex') /*Pantalla Inicio*/
 const searchMenu = $('#searchMenu')/* Menu buscar y categorias*/
 const catStore = $('#catStore') /*Menu Categorias*/
-const allItems = $('#allItems')/*Todos los productos*/
+const allItems = $('#allItems')/*Seccion todos los productos*/
+const almaItems = $('#almaItems');/*Seccion Almacen */
 const buttonAll = $('#buttonAll')/*Boton todas los productos*/
 const buttonCat = $('#buttonCat');
+const snackButton = $('.snackButton');/* Boton para ingresar seccion snack */
+const almaButton = $('#almaButton') /* Boton almacen */
 
 
 $(searchMenu).hide();
 $(catStore).hide();
 $(allItems).hide()
-
+$(almaItems).hide();  
 /*Funcion que muestra la tienda*/
 $(storeButton).click(function(){
   $(containerIndex).hide()
@@ -38,4 +41,10 @@ $(buttonCat).click(function(){
     $(allItems).hide();
     
   }
+})
+
+$(almaButton).click(function(){
+  $(catStore).hide();
+  $(almaItems).show();
+
 })

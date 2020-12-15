@@ -9,6 +9,10 @@ cartButtons.forEach((addToCart) => {
     
 });
 
+$(cartButtons).click(function(){
+    $('.toast').toast('show');
+})
+
 const buyButton = document.querySelector(".buyButton");
 
 buyButton.addEventListener("click", buyButtonClick);
@@ -120,6 +124,13 @@ function cantChange(event){
 /* Boton comprar */
 
 function buyButtonClick(){
-    shopCartContainer.innerHTML = " ";
-    shopCartTotal()
+    if (shopCartContainer.innerHTML == " ") {
+        alert("No hay ningun elemento en el carrito")    
+    }
+    else{
+        shopCartContainer.innerHTML = " ";
+        shopCartTotal();
+        alert("Gracias por su compra");
+    }
 }
+
