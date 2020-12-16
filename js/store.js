@@ -8,6 +8,7 @@ const buttonAll = $('#buttonAll')/*Boton todas los productos*/
 const buttonCat = $('#buttonCat');
 const snackButton = $('.snackButton');/* Boton para ingresar seccion snack */
 const almaButton = $('#almaButton') /* Boton almacen */
+const btnCategory = $('.btnCategory')/*Boton de categorias*/
 
 
 $(searchMenu).hide();
@@ -36,6 +37,10 @@ $(buttonAll).click(function(){
 $(buttonCat).click(function(){
   $(catStore).show();
   $(buttonAll).removeClass("btn-success");
+  $(".btn[category='snacks']").removeClass("btn-success");
+  $(".btn[category='drinks']").removeClass("btn-success");
+  $(".btn[category='almacen']").removeClass("btn-success");
+  $(".btn[category='sinGluten']").removeClass("btn-success");
   $(buttonCat).addClass("btn-success");
   if (($(allItems))) {
     $(allItems).hide();
@@ -43,8 +48,19 @@ $(buttonCat).click(function(){
   }
 })
 
-$(almaButton).click(function(){
-  $(catStore).hide();
-  $(almaItems).show();
+$(btnCategory).click(function(){
+  let cat = $(this).attr('category');
+  $(btnCategory).removeClass("btn-success");
+  $(buttonAll).removeClass("btn-success");
+  $(this).addClass("btn-success");
+  $(".item").hide();
+  $('.item[category="'+cat+'"]').show();
+})
 
+$(".btn[category='all'").click(function(){
+  $(".item").show();
+  $(".btn[category='snacks']").removeClass("btn-success");
+  $(".btn[category='drinks']").removeClass("btn-success");
+  $(".btn[category='almacen']").removeClass("btn-success");
+  $(".btn[category='sinGluten']").removeClass("btn-success");
 })
