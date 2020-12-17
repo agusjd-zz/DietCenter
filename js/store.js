@@ -6,10 +6,10 @@ const allItems = $('#allItems')/*Seccion todos los productos*/
 const almaItems = $('#almaItems');/*Seccion Almacen */
 const buttonAll = $('#buttonAll')/*Boton todas los productos*/
 const buttonCat = $('#buttonCat');
-const snackButton = $('.snackButton');/* Boton para ingresar seccion snack */
-const almaButton = $('#almaButton') /* Boton almacen */
 const btnCategory = $('.btnCategory')/*Boton de categorias*/
-
+const btnDrinks = $('#drinkButton');
+const btnSnacks = $('#snackButton');
+const btnTe = $('#teButton');
 
 $(searchMenu).hide();
 $(catStore).hide();
@@ -42,9 +42,8 @@ $(buttonCat).click(function(){
   $(".btn[category='almacen']").removeClass("btn-success");
   $(".btn[category='sinGluten']").removeClass("btn-success");
   $(buttonCat).addClass("btn-success");
-  if (($(allItems))) {
+  if ($(allItems)){
     $(allItems).hide();
-    
   }
 })
 
@@ -63,4 +62,33 @@ $(".btn[category='all'").click(function(){
   $(".btn[category='drinks']").removeClass("btn-success");
   $(".btn[category='almacen']").removeClass("btn-success");
   $(".btn[category='sinGluten']").removeClass("btn-success");
+})
+
+$(btnDrinks).click(function(){
+  $(catStore).hide();
+  $(buttonCat).removeClass("btn-success");
+  $(".btn[category='drinks'").addClass("btn-success")
+  $(allItems).show()
+  $(".item").hide();
+  $('.item[category="drinks"]').show();
+
+})
+
+$(btnSnacks).click(function(){
+  $(catStore).hide();
+  $(buttonCat).removeClass("btn-success");
+  $(".btn[category='snacks'").addClass("btn-success")
+  $(allItems).show();
+  $(".item").hide();
+  $('.item[category="snacks"]').show();
+
+})
+
+$(btnTe).click(function(){
+  $(catStore).hide();
+  $(buttonCat).removeClass("btn-success");
+  $(allItems).show()
+  $(".item").hide();
+  $('.item[category="te"]').show();
+
 })
